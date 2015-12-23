@@ -12,7 +12,9 @@ end
 # #2
 group :development do
   gem 'sqlite3'
-  
+  #This is a test of code.  I will end up with Pry here in the assignment
+  #but I wanted to show the issues
+
 end
 
 # Use SCSS for stylesheets
