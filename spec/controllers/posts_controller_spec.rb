@@ -11,8 +11,12 @@ RSpec.describe PostsController, type: :controller do
     end
 
   it "assigns [my_post] to @posts" do
-    get :index
-    expect(assigns(:posts)).to eq([my_post])
+      if post.post_id % 5 == 0
+      expect(assings(:posts)).to eq("spam")
+      else
+      get :index
+      expect(assigns(:posts)).to eq([my_post])
+      end
     end
   end
 

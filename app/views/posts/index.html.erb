@@ -1,12 +1,19 @@
 <h1>All Posts</h1>
 
-<% @posts.each do |post| %>
+<!-- exercise states to change the view not the data in the database, as a result,
+I am modifying the view to display "redacted information" for every 5th post -->
+
+<% @posts.each_with_index do |post,index| %>
   <div class="media">
     <div class="media-body">
       <h4 class="media-heading">
-       <%= link_to post.title, post %>
+          <% if (index + 1) % 5 == 0 %>
+            <%= p "SPAM" %>
+          <% else %>
+            <%= link_to post.title, post %>
+          <% end %>
       </h4>
     </div>
   </div>
-  
+
 <% end %>
