@@ -1,0 +1,14 @@
+<h1>All Advertisements</h1>
+
+<table>
+  <td width=200>Title</td>
+  <td width=300>Copy</td>
+  <td width=100>Price</td>
+  <tr>
+<% @advertisements.each do |ad| %>
+  <td><%= link_to ad.title, ad %></td>
+  <td><%= ad.copy %></td>
+  <td>$<%= ad.price %></td>
+  <tr>
+<% end %>
+</table>
