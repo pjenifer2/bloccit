@@ -10,16 +10,30 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to have_http_status(:success)
     end
 
-  it "assigns [my_post] to @posts" do
-      if post.post_id % 5 == 0
-      expect(assings(:posts)).to eq("spam")
-      else
-      get :index
-      expect(assigns(:posts)).to eq([my_post])
+      it "assigns [my_post] to @posts" do
+        #create posts
+        50.times do
+          Post.create!(
+          title: RandomData.random_sentence,
+          body: RandomData.random_paragraph
+          )
+        end
+
+        get :index
+        posts = assigns(:posts)
+
+          posts.each_with_index do |post, index|
+            if (index + 1) % 5 == 0
+
+              expect(post.title).to eq("spam")
+            else
+            
+              expect(post.title).not_to eq("spam")
+            end
+          end
       end
     end
-  end
-
+end
   #bloc is confusing me here .. delete or comment out.  I'm going to copy and past the comments in.
   #perhaps I need this in the future
 
@@ -43,4 +57,3 @@ RSpec.describe PostsController, type: :controller do
   #      expect(response).to have_http_status(:success)
   #    end
   #  end
-end
