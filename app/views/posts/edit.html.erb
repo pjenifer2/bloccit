@@ -1,2 +1,35 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<h1>Edit Post</h1>
+<p>Guidelines for Posts</p>
+
+
+<div class="container">
+  <div class="row">
+  <!-- column 1 -->
+    <div class="col-md-4">
+
+      <ul>
+        <li>Make sure it rhymes</li>
+        <li>Don't use the acronym ASU</li>
+        <li>Always refer to Star Wars</li>
+      <ul>
+    </div>
+<!-- column 2 -->
+    <div class="col-md-8">
+        <%= form_for @post do |f| %>
+          <div class="form-group" class: 'form-control', placeholder: "Enter post title">
+          <%= f.label :title %>
+          <%= f.text_field :title, rows: 8, class: 'form-control', placeholder: "Enter post title" %>
+          </div>
+
+          <div class="form-group" class: 'form-control', placeholder: "Enter post body">
+          <%= f.label :body %>
+          <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter post body" %>
+          </div>
+
+          <div class="form-group">
+          <%= f.submit "Save", class: 'btn btn-success'%>
+          </div>
+        <% end %>
+    </div>
+  </div>
+</div>
