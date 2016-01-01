@@ -1,0 +1,57 @@
+<!-- <h1>Questions #new</h1>
+
+<%= form_for @question do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+
+  <%= f.label :resolved %>
+  <%= f.check_box :resolved %>
+
+  <%= f.submit "Save" %>
+<% end %>
+-->
+
+
+<h1>New Question</h1>
+<p>Guidelines for Questions</p>
+
+
+<div class="container">
+  <div class="row">
+  <!-- column 1 -->
+    <div class="col-md-4">
+
+      <ul>
+        <li>Make sure it is relevant</li>
+        <li>Never ask about ASU</li>
+        <li>Only questions about Star Wars will be answered!</li>
+      <ul>
+    </div>
+<!-- column 2 -->
+    <div class="col-md-8">
+        <%= form_for @question do |f| %>
+          <div class="form-group" class: 'form-control', placeholder: "Enter post title">
+          <%= f.label :title %>
+          <%= f.text_field :title, rows: 8, class: 'form-control', placeholder: "Enter post title" %>
+          </div>
+
+          <div class="form-group" class: 'form-control', placeholder: "Enter post body">
+          <%= f.label :body %>
+          <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter post body" %>
+          </div>
+
+          <div class="form-group" class: 'form-control', placeholder: "Resolved state">
+            <%= f.label :resolved %>
+            <%= f.check_box :resolved, placeholder: "Question resolved?" %>
+          </div>
+
+          <div class="form-group">
+          <%= f.submit "Save", class: 'btn btn-success'%>
+          </div>
+        <% end %>
+    </div>
+  </div>
+</div>
