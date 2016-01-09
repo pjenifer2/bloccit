@@ -12,7 +12,7 @@ end
 # #2
 group :development do
   gem 'sqlite3'
-  
+
 end
 
 # Use SCSS for stylesheets
@@ -30,4 +30,5 @@ gem 'bootstrap-sass'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
+  gem 'shoulda'
 end
