@@ -1,0 +1,40 @@
+<h1>New Sponsored Post</h1>
+<p>Guidelines for Sponsored Posts</p>
+
+
+<div class="container">
+  <div class="row">
+  <!-- column 1 -->
+    <div class="col-md-4">
+
+      <ul>
+        <li>Make sure it does not promote ASU</li>
+        <li>Don't use the acronym ASU</li>
+        <li>Always refer to Star Wars</li>
+      <ul>
+    </div>
+<!-- column 2 -->
+    <div class="col-md-8">
+        <%= form_for [@topic, @sponsoredpost] do |f| %>
+          <div class="form-group" class: 'form-control', placeholder: "Enter sponsored post title">
+          <%= f.label :title %>
+          <%= f.text_field :title, rows: 8, class: 'form-control', placeholder: "Enter sponsored post title" %>
+          </div>
+
+          <div class="form-group" class: 'form-control', placeholder: "Enter sponsored post body">
+          <%= f.label :body %>
+          <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter sponsored post body" %>
+          </div>
+
+          <div class="form-group" class: 'form-control', placeholder: "Enter sponsored post price">
+          <%= f.label :price %>
+          <%= f.number_field :price, class: 'form-control', placeholder: "Enter sponsored post price" %>
+          </div>
+
+          <div class="form-group">
+          <%= f.submit "Save", class: 'btn btn-success'%>
+          </div>
+        <% end %>
+    </div>
+  </div>
+</div>
