@@ -27,6 +27,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 #bootstrap
 gem 'bootstrap-sass'
+#bcrypt is used for encrypting user password
+gem 'bcrypt'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
