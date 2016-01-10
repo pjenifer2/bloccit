@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
   before_save { self.email = email.downcase }
-
+  before_save :format_name
 
    EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
@@ -29,6 +29,35 @@ class User < ActiveRecord::Base
 
 
    #let's discuss bcrypt further
+
+   #this was my attempt
+   #def username_lowercase
+     #this code works in IRB (except I didn't use self.name)
+
+     #split self.name
+    # arrayofname = name
+    # newname = arrayofname.split.map(&:capitalize)
+    # finalname = newname.join(" ")
+    #
+    # self.name = finalname
+
+   #end
+
+   def format_name
+     if name
+       name_array = []
+       name.split.each do |name|
+         name_array << name.capitalize
+       end
+
+       self.name = name_array.join(" ")
+
+     end
+   end
+
+
+
+
 
 
 end
