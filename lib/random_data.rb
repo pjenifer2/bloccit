@@ -24,4 +24,15 @@ module RandomData
     letters.shuffle!
     letters[0,rand(3..98)].join
   end
+
+  def random_name
+    first_name = random_word.capitalize
+    last_name = random_word.capitalize
+    "#{first_name} #{last_name}"
+  end
+
+  def random_email
+    "#{random_word}@#{random_word}.#{random_word}"
+  end
+
 end
