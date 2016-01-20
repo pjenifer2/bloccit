@@ -20,7 +20,6 @@ end
 
 users = User.all
 
-
 15.times do
   Topic.create!(
   name: RandomData.random_sentence,
