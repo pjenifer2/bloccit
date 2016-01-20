@@ -10,9 +10,6 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
-  def edit
-    @post = Post.find(params[:id])
-  end
 
   def destroy
     @post = Post.find(params[:id])
@@ -28,12 +25,15 @@ class PostsController < ApplicationController
   end
 
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+
   def update
     @post = Post.find(params[:id])
     @post.title = params[:post][:title]
     @post.body = params[:post][:body]
-
-
 
     if @post.save
       flash[:notice] = "Post was updated"
