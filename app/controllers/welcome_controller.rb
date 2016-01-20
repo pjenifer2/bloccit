@@ -1,5 +1,6 @@
 class WelcomeController < ApplicationController
   def index
+    @issignedin = current_user.present?
   end
 
   def about
@@ -10,6 +11,6 @@ class WelcomeController < ApplicationController
 
   def faq
   end
-  
+
 
 end

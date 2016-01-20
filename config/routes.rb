@@ -7,9 +7,14 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
 
+<<<<<<< HEAD
   get "welcome/index"
   get "welcome/about"
   get "welcome/faq"
+=======
+  get 'about' => 'welcome#about'
+  get 'faq' => 'welcome#faq'
+>>>>>>> checkpoint-39
 
   root 'welcome#index'
 

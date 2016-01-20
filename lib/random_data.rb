@@ -35,4 +35,5 @@ module RandomData
     "#{random_word}@#{random_word}.#{random_word}"
   end
 
+
 end
