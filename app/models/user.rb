@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_many :posts
 
   before_save { self.email = email.downcase }
+  before_save { self.role ||= :member}
 
    EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
@@ -20,15 +21,8 @@ class User < ActiveRecord::Base
 
    has_secure_password
 
+   enum role: [:member, :admin]
 
-   #let's discuss before save more ... i think this is simply
-   #downcasing the email to allow for uniqueness check before doing check
-
-   #for email regex ... is this simply setting a variable with characters we wouldn't see
-   #in an e-mail
-
-
-   #let's discuss bcrypt further
 
 
 end
