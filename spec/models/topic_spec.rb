@@ -4,6 +4,11 @@ include RandomData
 RSpec.describe Topic, type: :model do
   let(:topic) { Topic.create!(name: RandomData.random_sentence, description: RandomData.random_paragraph)}
   it { should have_many(:posts)}
+  it { should have_many(:labelings)}
+  it { should have_many(:labels).through(:labelings) }
+
+  #documentation says context "attributes" do
+  #but I think in this case, describe and context are the same so I'm not making change
 
   describe "attributes" do
     it "should respond to name" do
