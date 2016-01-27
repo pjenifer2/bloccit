@@ -48,9 +48,6 @@ class PostsController < ApplicationController
 
   def create
 
-    #don't really understand this code
-
-
     @topic = Topic.find(params[:topic_id])
     @post = @topic.posts.build(post_params)
     @post.user = current_user
