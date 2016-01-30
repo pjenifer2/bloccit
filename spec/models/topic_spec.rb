@@ -7,8 +7,9 @@ RSpec.describe Topic, type: :model do
   it { should have_many(:labelings)}
   it { should have_many(:labels).through(:labelings) }
 
-  #documentation says context "attributes" do
-  #but I think in this case, describe and context are the same so I'm not making change
+  #assignment 42 code
+  it { is_expected.to have_many(:commentings)}
+  it { is_expected.to have_many(:comments).through(:commentings)}
 
   describe "attributes" do
     it "should respond to name" do
