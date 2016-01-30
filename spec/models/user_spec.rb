@@ -5,6 +5,10 @@ RSpec.describe User, type: :model do
     let(:user) {User.create!(name: "Bloccit User", email: "user@bloccit.com", password: "password")}
     it { should have_many(:posts)}
     it { should have_many(:comments)}
+
+    #bloc example shows it {is_expected.to have_many(:comments)} I don't show where that changed
+    it { is_expected.to have_many(:votes)}
+    
     it { should validate_presence_of(:name) }
     it { should validate_length_of(:name).is_at_least(1)}
 
